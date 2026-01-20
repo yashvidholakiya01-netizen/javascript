@@ -53,3 +53,35 @@ on console.log
 <p>Why : 
 </div>
  
+
+ <br>
+<hr>
+<br>
+<h3>Example 1 :</h3>
+<p>true + false </p> 
+<p> ans: 1
+</div>
+ 
+<div>
+<h3>Example 2 :</h3>
+<p>null + 1 </p>
+<p> ans: 1
+</div>
+ 
+<div>
+<h3>Example 3 :</h3>
+<p>"12" + 12 </p>
+<p>ans:1212
+</div>
+ 
+<div>
+<h3>Example 4 :</h3>
+<p>!! undefined</p>
+<p> ans : false-----
+</div>
+ 
+<div>
+<h3>Example 5 :</h3>
+<p>"12" - 1 </p>
+<p> ans : 11
+</div>
