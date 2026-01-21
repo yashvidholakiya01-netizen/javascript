@@ -67,9 +67,31 @@ let profiles =[{
    { name: "test1", age : 41,phone_number:1458745874},
  {name: "test1", age : 41,phone_number:1458745874},
 ];
+function name(params){}
 
+// dynamic Typing
+let u_name = "username";
+u_name = 123;
+u_name = {};
+//javascrit --> typescript
 
+// typeof quirks
+// typeof 12
+  // check type of variable use --> ex. typeof NaN, TYPEOF NULL, 1 + "1", 1 == "1", 1 === "1"
+// why typeof NaN --> NUMBER
+//NaN is a failed number oprations that why that type is number
+// ex. "hello" - 5 -->NaN
 
+//type coeration
+// "5" +1 // + --> value add coeration(Mix)
+// "5" -1
+
+//Truely vs Falsy Values
+// 0, false, "", null, undefind,NaN ,document.all, -- false
+//ex. !!0 -- check value is true and false
+//ex. if(null){}, js convert it into false
+//ex. if(-1){}, js convert it into true
+// all --> true
 
 
 
