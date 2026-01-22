@@ -229,3 +229,71 @@ console.log("Matched");
 }</p>
 <p>Answer or Error:  Matched
 </div>
+
+
+<p> controllflow statement
+<div>
+<h1>Example 1 :</h1>
+<p>let x = 2;</p>
+<p>switch(x){
+    case 2:
+    console.log("Two");
+    case 3:
+    console.log("Three");
+}</P>
+<p> ans : Two
+<div>
+ 
+<div>
+<h1>Example 2 :</h1>
+<p>Write a function getGrade(score) that:</p>
+<p> Takes A student's score as input (0 to 100)</P>
+<p>Returns the grade based on below logic:</P>
+<p>90-100 A+</P>
+<p>80-89 A</P>
+<p>70-79 B</P>
+<p>60-69 C</P>
+<p>33-59 D</P>
+<p>0-32 Fail</P>
+<p>Anything Else Invalid Marks</P>
+<div>
+    function getGrade(score){
+        if(score >= 90 && score <=100){
+            return "A +";
+        }else if(score >= 80 && score <= 90){
+            return "A";
+        }else if(score >= 70 && score <= 80){
+            return "B";
+        }else if(score >= 60 && score <= 70){
+            return "C";
+        }else if(score >= 33 && score <= 60){
+            return "D";
+        }else if(score >= 0 && score <= 33){
+            return "FAIL";
+        }else {
+            return "invalid marks"
+        }
+    }
+</div>
+<div>
+ 
+<div>
+<h1>Example 3 :</h1>
+<p>Rock-Paper-Scissors:</p>
+<p>rock - scissors --> rock</P>
+<p>paper - rock --> paper</P>
+<p>scissors - paper --> scissors</P>
+<div>function game(value1,value2){
+   if(value1 === rock && value2 === scissors){
+        return "rock";
+    }else if (value1 === paper && value2 === rock){
+        return "paper";
+    }else if (value1 === scissors && value2 === paper){
+        return "scissors";
+    }else {
+        return "it's a tie";
+    }
+}
+ 
+</div>
+<div>
