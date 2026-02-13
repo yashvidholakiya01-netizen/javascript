@@ -709,3 +709,392 @@ console.log(counter()); // 2
 }</p>
 <p>Ans and Why</p>
 </div>
+
+## Array Methods show
+
+// Q1. push()
+// You are building a to-do app. Add a new task 'Buy milk' to the tasks array.
+let tasks = ['Wake up', 'Brush teeth'];
+//ans
+tasks.push("buy milk");
+console.log(tasks);
+
+
+
+// Q2. pop()
+// Remove the last notification from the notifications array.
+let notifications = ['Email', 'Message', 'Reminder'];
+// ans 
+let notifications = ['Email', 'Message', 'Reminder'];
+notifications.pop();
+console.log(notifications);
+(2) ['Email', 'Message']
+
+
+
+
+// Q3. shift()
+// A queue system removes the first customer. Remove the first customer.
+let customers = ['Customer1', 'Customer2', 'Customer3'];
+// ans:
+let customers = ['Customer1', 'Customer2', 'Customer3'];
+customers.shift();
+console.log(customers);
+(2) ['Customer2', 'Customer3']
+
+
+// Q4. unshift()
+// A new song is added to the beginning of the playlist.
+let playlist = ['Song B', 'Song C'];
+playlist.unshif("song A ");
+console.log(playlist);
+(3) ['ong A ', 'Song B', 'Song C']
+
+
+
+// Q5. splice()
+// In a classroom list, remove 'Alex' and add 'John' and 'Sara' in the same position.
+let students = ['Mike', 'Alex', 'Emma', 'Sophia'];
+// students.splice(1,1, "johan", "sara");
+// console.log(students);
+(5) ['Mike', 'johan', 'sara', 'Emma', 'Sophia']
+
+
+// Q6. splice()
+// From the menu, remove 2 items starting from index 1.
+let menu = ['Burger', 'Pizza', 'Pasta', 'Salad'];
+menu.splice(0,2);
+console.log(menu);
+ ['Pasta', 'Salad']
+
+
+// Q7. slice()
+// Create a new array that contains only weekend days.
+let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+let week = days.slice(5);
+console.log(week);
+
+
+
+
+// Q8. reverse()
+// Reverse the order of levels in a game.
+let levels = ['Easy', 'Medium', 'Hard'];
+levels.reverse();
+console.log(levels);
+['Hard', 'Medium', 'Easy']
+
+
+
+
+// Q9. sort()
+// Sort the scores in ascending order.
+let scores = [45, 12, 78, 34, 89];
+scores.sort()
+console.log(scores);
+(5) [12, 34, 45, 78, 89]
+
+
+
+// Q10. sort() with numbers
+// Sort the prices from lowest to highest.
+let prices = [199, 49, 999, 299, 149];
+prices.sort(function (a ,b){
+    return a - b;
+})
+console.log(prices);
+(5) [49, 149, 199, 299, 999]
+
+
+
+
+// Q11. slice() vs splice()
+// From the array, create a new array of the first 3 items WITHOUT changing the original array.
+let products = ['Laptop', 'Phone', 'Tablet', 'Monitor', 'Keyboard'];
+let p = products.slice(0,3);
+console.log(p)
+console.log(products)
+
+
+
+// Q12. splice() complex
+// In the array below:
+// 1. Remove 'Blue'
+// 2. Add 'Purple' and 'Orange' at the same position
+let colors = ['Red', 'Green', 'Blue', 'Yellow'];
+ans:colors.splice(2, 1, 'Purple', 'Orange')
+
+
+// Q13. reverse() + push()
+// Reverse the array and then add 'Final Step' at the end.
+let steps = ['Step 1', 'Step 2', 'Step 3'];
+steps.reverse().push("finl step");
+console.log(steps)
+(4) ['Step 3', 'Step 2', 'Step 1', 'finl step']
+
+
+// Q14. sort() strings
+// Sort names alphabetically, ignoring case sensitivity.
+let names = ['alice', 'Bob', 'charlie', 'David'];
+ans: names.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+
+
+
+
+// Q15. Combination Question
+// You are managing a movie watchlist:
+// 1. Add 'Inception'
+// 2. Remove the first movie
+// 3. Sort the list alphabetically
+let movies = ['Avatar', 'Titanic', 'Gladiator'];
+movies.splice(0,1, "Inception");
+movies.sort();
+console.log(movies)
+
+
+
+// Q16. splice() return value
+// What does the splice method return in this case?
+let nums1 = [1, 2, 3, 4];
+nums1.splice(1, 2); // 1, 2 remove thay se
+ans : [1, 4]  
+
+
+
+// Q17. slice() immutability check
+// After executing slice, does the original array change?
+let nums2 = [10, 20, 30, 40];
+let result = nums2.slice(1, 3);
+
+
+// Q19. reverse() mutation
+// After reversing, what happens to the original array reference?
+let letters = ['a', 'b', 'c'];
+let reversedLetters = letters.reverse();
+
+
+// Q21. splice() edge case
+// What happens if deleteCount is 0?
+let arr = ['x', 'y', 'z'];
+arr.splice(1, 0, 'new');
+
+
+
+// Q23. slice() negative index
+// What elements are returned?
+let values = [100, 200, 300, 400, 500];
+let sliced = values.slice(-3, -1);
+
+
+
+
+// Q24. splice() vs slice() decision
+// Which method would you use if you want to:
+// a) Update the original array
+// b) Keep the original array unchanged
+
+
+
+
+// Q25. Chained methods (brain teaser)
+// What is the final value of arr?
+let arr2 = [1, 2, 3];
+arr2.push(arr2.shift());
+
+
+
+
+1. Double daily steps count
+
+Real life: Fitness app doubling step goal
+
+const steps = [1000, 2000, 3000];
+
+function doubleSteps(step) {
+  return step * 2;
+}
+
+const newSteps = steps.map(doubleSteps);
+
+
+
+2. Convert minutes to seconds
+
+Real life: Video duration calculation
+
+
+const minutes = [1, 5, 10];
+
+const seconds = minutes.map(function(min) {
+  return min * 60;
+});
+
+
+
+3. Add ₹50 delivery charge to prices
+
+Real life: Food delivery app
+
+const prices = [200, 350, 500];
+
+const finalPrices = prices.map(price => price + 50);
+
+
+
+4. Convert exam marks to grades
+
+Real life: Result system
+
+const marks = [35, 72, 88, 40];
+
+function getGrade(mark) {
+  return mark >= 40 ? 'Pass' : 'Fail';
+}
+
+const grades = marks.map(getGrade);
+
+
+
+5. Capitalize names
+
+Real life: Display usernames properly
+
+const names = ['rahul', 'neha', 'amit'];
+
+const formattedNames = names.map(name =>
+  name[0].toUpperCase() + name.slice(1)
+);
+
+
+
+6. Apply 10% discount
+
+Real life: Shopping sale
+
+const prices = [500, 1000, 1500];
+
+function applyDiscount(price) {
+  return price - price * 0.10;
+}
+
+const discounted = prices.map(applyDiscount);
+
+
+
+7. Add bonus points to scores based on condition
+
+Real life: Game scoring system
+
+const scores = [45, 60, 85];
+
+const finalScores = scores.map(score => {
+  if (score >= 80) return score + 20;
+  if (score >= 50) return score + 10;
+  return score;
+});
+
+
+
+8. Convert temperatures with formula
+
+Real life: Weather app
+
+const celsius = [0, 20, 30];
+
+function toFahrenheit(temp) {
+  return (temp * 9/5) + 32;
+}
+
+const fahrenheit = celsius.map(toFahrenheit);
+
+
+
+9. Generate table of numbers
+
+Real life: Math learning app
+
+const numbers = [1, 2, 3, 4];
+
+const tableOfTwo = numbers.map(num => num * 2);
+
+
+
+10. Combine map with string formatting
+
+Real life: SMS notification system
+
+const balances = [500, 1200, 300];
+
+const messages = balances.map(balance =>
+  `Your balance is ₹${balance}`
+);
+
+JavaScript .reduce() Method Example:
+
+
+### 1. Total money in wallet
+**Real life:** Add all cash amounts
+const money = [100, 200, 50];
+const totalMoney = money.reduce((sum, amount) => sum + amount, 0);
+console.log(totalMoney)  // 350
+
+ 
+### 2. Total steps walked in a week
+**Real life:** Fitness tracker
+const steps = [3000, 5000, 4000, 6000];
+function addSteps(total, step) {
+  return total + step;
+}
+const weeklySteps = steps.reduce(addSteps, 0);
+console.log(weeklySteps)  // 18000
+
+ 
+### 3. Find total cart price
+**Real life:** Shopping bill
+const prices = [499, 299, 199];
+const totalPrice = prices.reduce((total, price) => total + price, 0);
+console.log(totalPrice)  // 997
+
+ 
+### 4. Find maximum score
+**Real life:** Highest exam mark
+const marks = [45, 88, 67, 92];
+const highest = marks.reduce((max, mark) => {
+  return mark > max ? mark : max;
+}, marks[0]);
+console.log(highest)  // 92
+ 
+### 5. Count total characters
+**Real life:** Text length calculation
+const words = ['Hi', 'Hello', 'JS'];
+const totalChars = words.reduce((count, word) => count + word.length, 0);
+console.log(totalChars)  // 9
+
+
+### 6. Combine words into a sentence
+**Real life:** Message builder
+const words = ['Learning', 'JavaScript', 'is', 'fun'];
+const sentence = words.reduce((text, word) => text + ' ' + word);
+console.log(sentence)  // Learning JavaScript is fun
+ 
+### 7. Count passed students
+**Real life:** Result summary
+const marks = [35, 72, 88, 40, 25];
+const passCount = marks.reduce((count, mark) => {
+  return mark >= 40 ? count + 1 : count;
+}, 0);
+console.log(passCount)  // 3
+ 
+### 8. Calculate final balance
+**Real life:** Bank account calculation
+const transactions = [1000, -200, -300, 500];
+const finalBalance = transactions.reduce((balance, amount) => balance + amount, 0);
+console.log(finalBalance)  // 1000
+
+### 10. Build comma-separated string
+**Real life:** Display values in UI
+const items = ['Pen', 'Book', 'Pencil'];
+const result = items.reduce((text, item) => text + ', ' + item);
+console.log(result) // Pen, Book, Pencil
+
+ 
