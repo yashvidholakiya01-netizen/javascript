@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card maker</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        margin-top: 30px;
+        
+    }
+    h1{
+      font-size: 2rem;
+      text-align:center ;
+      padding: 10px;
+      background-color: black;
+      color: white;
+    }
+    input{
+        height: 1.5rem;
+        margin-bottom: 5px;
+    }
+    .card{
+        width: 300px;
+        height: auto;
+        border-radius: 16px;
+        border: 1px solid red;
+        padding: 20px 10px;
+        display: inline-block;
+        margin: 1rem;
+        background-color: lightcoral;
+    }
+    .img-div{
+        overflow: hidden;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        border: 1px solid rgb(111, 87, 191);
+    }
+    .img-div img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+    b{
+     margin-right: 15px;
+    }
+</style>
+<body>
+    <h1>create card</h1>
+    <div id="main">
+<form>
+       <input type="text" placeholder="profile img link">
+         <br><br/>
+       <input type="text" placeholder="username">
+       <br>
+       <br/>
+       <input type="text" placeholder="Occupation">
+         <br> <br/>
+       <input type="text" placeholder="Gender">
+        <br>  <br/>
+        <input type="email" placeholder="email">
+          <br>  <br/>
+       <input type="tel" placeholder="number" ><br>
+       <br>
+       <button type="submit" value="Create Card">submit</button>
+    </form>
+    </div>
+    <div>
+        <!-- <div class="card">
+            <div class="img-div">
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="">
+
+            </div>
+            <h3>username</h3>
+            <h5>Occuopation</h5>
+            <i>Gender</i>
+            <br>
+            <b>Email</b>
+            <span>Phone number</span>
+        </div> -->
+    </div>
+    <script src="submit.js"></script>
+</body>
+</html>
