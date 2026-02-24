@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: black;
+      color: white;
+    }
+    #main {
+      text-align: center;
+      margin-top: 5rem;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .inp_div input {
+      outline: none;
+      border: none;
+      width: 210px;
+      padding: 12px 18px;
+      background-color: #555;
+      border-radius: 14px;
+      margin: 10px;
+      color: white;
+    }
+    #add_btn {
+      border: none;
+      background-color: #333;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 24px;
+      font-weight: 600px;
+    }
+    .task_list{
+      text-align: center;
+      list-style-type: none;
+    }
+    .task_list li{
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <div id="main">
+        <h1>Todo List Manager</h1>
+        <div class="inp_div">
+          <input type="text" />
+          <button id="add_btn">ADD</button>
+        </div>
+        <ul class="task_list"></ul>
+      </div>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>

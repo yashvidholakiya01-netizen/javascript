@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .searchBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5rem 0;
+    }
+    .bar{
+        outline: none;
+        width: 250px;
+        padding: 14px 16px;
+        border-radius: 24px;
+        border: 1px solid rgba(129, 123, 123)
+    }
+    .card-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        
+    }
+    .wrapper{
+         display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+    }
+    .img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .blur {
+      position: absolute;
+      height: 100%;
+      width: 40%;
+      backdrop-filter: blur(10px);
+      z-index: 1;
+      background-color: linear-gradient(
+        to right,
+        rgb(54, 41, 41),
+        rgb(45, 30, 30)
+      );
+    }
+    .content {
+      position: absolute;
+      bottom: 10px;
+      z-index: 2;
+      color: blanchedalmond;
+      text-align: center;
+    }
+    .content h2 {
+      font-size: 1.5rem;
+    }
+    .card-text {
+      font-size: 14px;
+      line-height: 1.4;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="searchBox">
+      <input type="text" class="bar" placeholder="search...." name="" id="" />
+    </div>
+    <div class="wrappper">
+      <div class="card-container">
+        <!-- <div class="card">
+          <img
+            src="https://thepicturesdp.in/wp-content/uploads/2025/07/profile-picture-girls-6.jpg"
+            class="img"
+            alt=""
+          />
+          <div class="blur"> </div>
+          <div class="content">
+            <h2>card</h2>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Quibusdam, necessitatibus iure. Suscipit non alias, quaerat
+              tenetur dicta debitis enim nesciunt maiores sed consequuntur quasi
+              consequatur corrupti consectetur, blanditiis velit ut.
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="SearchBar.js"></script>
+  </body>
+</html>
