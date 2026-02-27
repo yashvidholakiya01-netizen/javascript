@@ -1,0 +1,159 @@
+<!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+   <div class="main flex justify-center items-center mt-10 ">
+     <form class="bg-amber-100 px-10 px-6 py-6 rounded-2xl ">
+        <label for="dp">profile image</label>
+      <input class="block outline-none border-amber-800  border-2 rounded-xl px-4 py-2 mb-5 w-full"type="text" name="dp" id="dp" placeholder="profile pic" />
+       <label for="name">User name:</label>
+      <input class="block outline-none border-amber-800 border-2 rounded-xl px-4 py-2 mb-5 w-full"type="text1" name="name" id="name" placeholder="user name" />
+       <label for="post">post:</label>
+      <input class="block outline-none border-amber-800 border-2 rounded-xl px-4 py-2 mb-5 w-full"type="url" name="post" id="post" placeholder="Image Link" />
+      <textarea
+        name="caption"
+        id="caption"
+        cols="30"
+        rows="10"
+        placeholder="write a caption"
+        class="border-2 border-amber-800 block px-6 py-4 rounded-xl px-4 py-2 mb-5"
+      ></textarea>
+      <button class="submit w-full h-auto px-6 py-4 font-bold bg-amber-800 text-white rounded-xl">create post</button>
+    </form>
+   </div>
+    <div id="fncs">
+      <div id="add"></div>
+      <div id="remove"></div>
+      <div id="update"></div>
+    </div>
+    
+    <div id="posts grid grid-cols-1">
+      <div
+        class="post w-1/4 h-auto rounded-md border-2 border-amber-700 rounded-3xl shadow-2xl hover:shadow-4xl 
+        hover:shadow-amber-700 overflow-hidden ">
+        <div class="bar flex items-center gap-4 bg-white/20 px-4 py-2">
+          <img
+            src="https://i.pinimg.com/originals/ec/ec/eb/ececebdd9afc20eab7b2ed92bbc8d2c6.jpg"
+            alt=""
+            class="w-16 h-16 rounded-full"
+          />
+          <div>
+            <h3 class="text-2xl font-semibold text-black/50">Username</h3>
+            <p class="text-md font-semibold text-black/20">Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+        <div class="main_img overflow-hidden w-full h-auto rounded-xl">
+          <img
+            src="https://thumbs.dreamstime.com/b/panda-eating-bamboo-cartoon-373788267.jpg"
+            alt="Main Post"
+            class="w-full h-full object-fit hover:scale-[1.5]"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SocialFlow | Post Creation</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+
+        body {
+
+            background: radial-gradient(circle at top left, #fffbeb, #fef3c7, #fde68a);
+
+            min-height: 100vh;
+
+        }
+
+        .glass {
+
+            background: rgba(255, 255, 255, 0.7);
+
+            backdrop-filter: blur(10px);
+
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+        }
+
+ </style>
+
+</head>
+
+<body class="p-5 md:p-10 font-sans text-amber-900">
+
+​
+
+    <header class="text-center mb-12 animate__animated animate__fadeInDown">
+
+        <h1 class="text-4xl font-black tracking-tight text-amber-800">Social<span class="text-amber-600">Flow</span></h1>
+
+        <p class="text-amber-700/60 font-medium">Share your moments with the world</p>
+
+    </header>
+
+​
+
+    <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        
+
+        <section class="lg:col-span-4 animate__animated animate__fadeInLeft">
+            <div class="glass p-8 rounded-3xl shadow-2xl border-t border-white">
+
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+
+                    <span>✨</span> Create New Post
+
+                </h2>
+
+                <form id="postForm" class="space-y-4">
+
+                    <div>
+
+                        <label class="block text-sm font-bold mb-1 ml-2">Profile Image URL</label>
+
+                        <input type="text" id="dp" placeholder="https://..." 
+
+                            class="w-full bg-white/50 border-2 border-amber-200 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 transition-all shadow-sm" />
+
+                    </div>
+
+                    
+
+                    <div>
+
+                        <label class="block text-sm font-bold mb-1 ml-2">Username</label>
+
+                        <input type="text" id="name" placeholder="@username" 
+
+                            class="w-full bg-white/50 border-2 border-amber-200 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 transition-all shadow-sm" />
+
+                    </div>
+
+​
+
+
+
+
