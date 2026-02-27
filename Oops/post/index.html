@@ -60,100 +60,237 @@
   </body>
 </html> -->
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>SocialFlow | Post Creation</title>
-
+    <title>SocialFlow | LocalStorage OOP</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
     <style>
-
         body {
-
             background: radial-gradient(circle at top left, #fffbeb, #fef3c7, #fde68a);
-
             min-height: 100vh;
-
+            scroll-behavior: smooth;
         }
-
         .glass {
-
             background: rgba(255, 255, 255, 0.7);
-
-            backdrop-filter: blur(10px);
-
-            border: 1px solid rgba(255, 255, 255, 0.3);
-
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
-
- </style>
-
+        /* Custom scrollbar for better look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 10px; }
+    </style>
 </head>
-
 <body class="p-5 md:p-10 font-sans text-amber-900">
 
-​
+    <div class="fixed top-4 right-4 z-50 glass px-4 py-2 rounded-2xl shadow-xl border-amber-300 flex items-center gap-3">
+        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+        <span class="text-xs font-black uppercase tracking-wider text-amber-800">Active User:</span>
+        <select id="currentUser" class="bg-transparent font-bold outline-none cursor-pointer text-amber-900">
+            <option value="user_alpha">Alex (User A)</option>
+            <option value="user_beta">Jordan (User B)</option>
+            <option value="user_gamma">Sam (User C)</option>
+        </select>
+    </div>
 
     <header class="text-center mb-12 animate__animated animate__fadeInDown">
-
-        <h1 class="text-4xl font-black tracking-tight text-amber-800">Social<span class="text-amber-600">Flow</span></h1>
-
-        <p class="text-amber-700/60 font-medium">Share your moments with the world</p>
-
+        <h1 class="text-5xl font-black tracking-tighter text-amber-800">Social<span class="text-amber-600">Flow.</span></h1>
+        <p class="text-amber-700/60 font-medium mt-2">OOP Managed • LocalStorage Persistent</p>
     </header>
 
-​
-
     <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
-
         
-
-        <section class="lg:col-span-4 animate__animated animate__fadeInLeft">
-            <div class="glass p-8 rounded-3xl shadow-2xl border-t border-white">
-
+        <section class="lg:col-span-4 lg:sticky lg:top-10 h-fit animate__animated animate__fadeInLeft">
+            <div class="glass p-8 rounded-[2.5rem] shadow-2xl border-t border-white">
                 <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-
-                    <span>✨</span> Create New Post
-
+                    <span class="bg-amber-500 text-white w-8 h-8 flex items-center justify-center rounded-lg text-sm">＋</span> 
+                    Create Post
                 </h2>
-
                 <form id="postForm" class="space-y-4">
-
                     <div>
-
-                        <label class="block text-sm font-bold mb-1 ml-2">Profile Image URL</label>
-
-                        <input type="text" id="dp" placeholder="https://..." 
-
-                            class="w-full bg-white/50 border-2 border-amber-200 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 transition-all shadow-sm" />
-
+                        <label class="block text-xs font-black uppercase ml-2 mb-1 text-amber-800/50">Avatar URL</label>
+                        <input type="text" id="dp" placeholder="https://images.com/avatar.jpg" required
+                            class="w-full bg-white/50 border-2 border-amber-100 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 focus:bg-white transition-all shadow-sm" />
                     </div>
-
                     
-
                     <div>
-
-                        <label class="block text-sm font-bold mb-1 ml-2">Username</label>
-
-                        <input type="text" id="name" placeholder="@username" 
-
-                            class="w-full bg-white/50 border-2 border-amber-200 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 transition-all shadow-sm" />
-
+                        <label class="block text-xs font-black uppercase ml-2 mb-1 text-amber-800/50">Display Name</label>
+                        <input type="text" id="name" placeholder="E.g. Nature Lover" required
+                            class="w-full bg-white/50 border-2 border-amber-100 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 focus:bg-white transition-all shadow-sm" />
                     </div>
 
-​
+                    <div>
+                        <label class="block text-xs font-black uppercase ml-2 mb-1 text-amber-800/50">Photo URL</label>
+                        <input type="url" id="postImg" placeholder="https://images.com/photo.jpg" required
+                            class="w-full bg-white/50 border-2 border-amber-100 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 focus:bg-white transition-all shadow-sm" />
+                    </div>
 
+                    <div>
+                        <label class="block text-xs font-black uppercase ml-2 mb-1 text-amber-800/50">Caption</label>
+                        <textarea id="caption" rows="3" placeholder="What's on your mind?" 
+                            class="w-full bg-white/50 border-2 border-amber-100 rounded-2xl px-4 py-3 outline-none focus:border-amber-500 focus:bg-white transition-all shadow-sm resize-none"></textarea>
+                    </div>
 
+                    <button type="submit" 
+                        class="w-full bg-amber-800 hover:bg-black text-white font-black py-4 rounded-2xl shadow-lg transform active:scale-95 transition-all cursor-pointer mt-4">
+                        SHARE POST
+                    </button>
+                </form>
+            </div>
+        </section>
 
+        <section class="lg:col-span-8">
+            <div id="postsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                </div>
+        </section>
+    </main>
 
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 hidden z-50">
+        <div class="bg-black text-white px-8 py-3 rounded-full shadow-2xl font-bold animate__animated animate__fadeInUp">
+            Post Published! 🚀
+        </div>
+    </div>
+
+    <script>
+        /**
+         * OBJECT ORIENTED PROGRAMMING (OOP) LOGIC
+         */
+
+        // 1. Post Blueprint
+        class Post {
+            constructor(dp, name, postImg, caption, authorId) {
+                this.id = Date.now(); // Unique timestamp ID
+                this.dp = dp;
+                this.name = name;
+                this.postImg = postImg;
+                this.caption = caption;
+                this.authorId = authorId;
+                this.date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }
+        }
+
+        // 2. Application Controller
+        class SocialApp {
+            constructor() {
+                // Initialize state from LocalStorage
+                this.posts = JSON.parse(localStorage.getItem('social_flow_data')) || [];
+                
+                // Select Elements
+                this.container = document.getElementById('postsContainer');
+                this.form = document.getElementById('postForm');
+                this.userToggle = document.getElementById('currentUser');
+                this.toast = document.getElementById('toast');
+
+                this.init();
+            }
+
+            init() {
+                // Event Listeners
+                this.form.addEventListener('submit', (e) => this.handlePostCreation(e));
+                this.userToggle.addEventListener('change', () => this.render());
+                
+                // Initial Display
+                this.render();
+            }
+
+            handlePostCreation(e) {
+                e.preventDefault();
+
+                // Get values
+                const dp = document.getElementById('dp').value;
+                const name = document.getElementById('name').value;
+                const postImg = document.getElementById('postImg').value;
+                const caption = document.getElementById('caption').value;
+                const currentUserId = this.userToggle.value;
+
+                // Create new instance
+                const newPost = new Post(dp, name, postImg, caption, currentUserId);
+                
+                // Update Array (add to top)
+                this.posts.unshift(newPost);
+                
+                // Persist & Update UI
+                this.syncData();
+                this.form.reset();
+                this.showToast();
+            }
+
+            deletePost(postId) {
+                // Filter out the post with matching ID
+                this.posts = this.posts.filter(p => p.id !== postId);
+                this.syncData();
+            }
+
+            syncData() {
+                localStorage.setItem('social_flow_data', JSON.stringify(this.posts));
+                this.render();
+            }
+
+            showToast() {
+                this.toast.classList.remove('hidden');
+                setTimeout(() => this.toast.classList.add('hidden'), 3000);
+            }
+
+            render() {
+                this.container.innerHTML = '';
+                const currentUserId = this.userToggle.value;
+
+                if (this.posts.length === 0) {
+                    this.container.innerHTML = `
+                        <div class="col-span-full py-20 text-center opacity-40">
+                            <p class="text-xl font-bold">No posts yet. Start the conversation!</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                this.posts.forEach(post => {
+                    // Check ownership logic
+                    const isOwner = post.authorId === currentUserId;
+                    
+                    const postCard = document.createElement('div');
+                    postCard.className = "group glass rounded-[2.5rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 animate__animated animate__fadeInUp";
+                    
+                    postCard.innerHTML = `
+                        <div class="flex items-center justify-between p-5 bg-white/30">
+                            <div class="flex items-center gap-3">
+                                <img src="${post.dp}" class="w-12 h-12 rounded-full border-2 border-white object-cover shadow-sm">
+                                <div>
+                                    <h3 class="font-bold text-amber-950 leading-none">${post.name}</h3>
+                                    <span class="text-[10px] font-bold text-amber-700/40 uppercase tracking-tighter">${post.date}</span>
+                                </div>
+                            </div>
+                            ${isOwner ? `
+                                <button onclick="app.deletePost(${post.id})" 
+                                    class="bg-red-50 hover:bg-red-500 hover:text-white text-red-500 p-2 rounded-xl transition-all cursor-pointer shadow-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path></svg>
+                                </button>
+                            ` : `
+                                <span class="text-[10px] bg-amber-100 text-amber-600 px-2 py-1 rounded-md font-bold uppercase">Follow</span>
+                            `}
+                        </div>
+
+                        <div class="relative overflow-hidden aspect-[4/5] bg-amber-50">
+                            <img src="${post.postImg}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy">
+                        </div>
+
+                        <div class="p-6">
+                            <p class="text-amber-900/80 leading-relaxed font-medium">
+                                <span class="font-black text-amber-950 mr-1">${post.name.toLowerCase()}</span> ${post.caption}
+                            </p>
+                        </div>
+                    `;
+                    this.container.appendChild(postCard);
+                });
+            }
+        }
+
+        // Initialize Application
+        const app = new SocialApp();
+    </script>
+</body>
+</html>
